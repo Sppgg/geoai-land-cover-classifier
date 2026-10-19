@@ -1,0 +1,7 @@
+modelo,representacion,alpha,escalado,accuracy_val,macro_f1_val
+RGB + SGD baseline,RGB,0.0001,False,0.281,0.2615
+RGB + SGD optimizado,RGB,0.001,True,0.41,0.3921
+HOG + SGD,HOG,0.001,True,0.473,0.4625
+HOG + SGD,HOG,0.01,True,0.49,0.4732
+HOG + SGD,HOG,0.1,True,0.503,0.471
+HOG + SGD,HOG,1.0,True,0.475,0.4024
