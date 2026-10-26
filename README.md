@@ -215,7 +215,11 @@ Large train-validation performance gaps highlighted the limitations of the curre
 ```text
 geoai-land-cover-classifier/
 ├── notebooks/
-│   └── 01_data_exploration.ipynb
+│   ├── 00_original_experiments.ipynb
+│   ├── 01_data_exploration.ipynb
+│   ├── 02_preprocessing.ipynb
+│   ├── 03_model_training.ipynb
+│   └── 04_model_evaluation.ipynb
 ├── results/
 │   └── experiments.csv
 ├── .gitignore
@@ -223,9 +227,21 @@ geoai-land-cover-classifier/
 └── README.md
 ```
 
-**Notebooks**
+## Running the Notebooks
 
-[01_data_exploration.ipynb](notebooks/01_data_exploration.ipynb) contains the documented workflow, including data exploration, feature engineering, model training and validation.
+The project is organized into four stages:
+
+1. **Data Exploration:** Inspect the EuroSAT dataset, visualize satellite imagery and analyze class distributions.
+2. **Preprocessing:** Generate reproducible data splits, prepare RGB features and extract HOG descriptors.
+3. **Model Training:** Train linear classifiers and compare preprocessing and regularization strategies.
+4. **Model Evaluation:** Review recorded validation results and analyze model performance and limitations.
+
+Each notebook is designed to run independently in Google Colab. Some data preparation operations are repeated to avoid dependencies on variables stored in other notebook sessions.
+
+To reproduce an experiment, open the corresponding notebook in Google Colab and select **Runtime → Run all**.
+
+Results reported in this repository are exploratory validation results. The held-out test set has not yet been used for final evaluation.
+
 
 **Results**
 
