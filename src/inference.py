@@ -17,6 +17,14 @@ from skimage.color import rgb2gray
 from skimage.feature import hog
 
 
+# Path nos permite trabajar con rutas de archivos.
+from pathlib import Path
+
+# joblib permite recuperar modelos de Machine Learning
+# que hemos guardado después de entrenarlos.
+import joblib
+
+
 # ------------------------------------------------------------
 # CONFIGURACIÓN DE LAS IMÁGENES
 # ------------------------------------------------------------
@@ -114,3 +122,45 @@ def predecir_cobertura(imagen_rgb, modelo):
 
     # Devolvemos el identificador de la clase.
     return int(prediccion[0])
+
+
+
+# ============================================================
+# CARGA DEL MODELO ENTRENADO
+# ============================================================
+
+def cargar_modelo(ruta):
+    """
+    Recupera un modelo de Machine Learning
+    guardado previamente mediante joblib.
+
+    Parámetros
+    ----------
+    ruta:
+        Ubicación del archivo .joblib.
+
+    Devuelve
+    --------
+    Pipeline:
+        Modelo entrenado y listo para predecir.
+    """
+
+    # 1. Convertimos la ruta en un objeto Path.
+    ruta_modelo = Path(ruta)
+
+    # 2. Comprobamos que el archivo existe.
+    if not ruta_modelo.is_file():
+        raise FileNotFoundError(
+            f"No se encontró el modelo: {ruta_modelo}"
+        )
+
+    # 3. Recuperamos el modelo entrenado.
+    #
+    # IMPORTANTE:
+    # Solo cargaremos archivos joblib propios
+    # o procedentes de fuentes confiables.
+    modelo = joblib.load(ruta_modelo)
+
+    # 4. Devolvemos el modelo recuperado.
+    return modelo
+
