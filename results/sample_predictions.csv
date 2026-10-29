@@ -1,0 +1,7 @@
+filename,true_label,predicted_label,correct
+test_image.png,AnnualCrop,Highway,False
+test_image_1.png,Residential,Residential,True
+test_image_2.jpg,Residential,Residential,True
+test_image_2.png,SeaLake,Highway,False
+test_image_3.png,HerbaceousVegetation,HerbaceousVegetation,True
+test_image_4.png,Forest,HerbaceousVegetation,False
