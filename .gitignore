@@ -218,3 +218,29 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# ============================================================
+# GEOAI LAND COVER CLASSIFIER
+# Archivos locales de Machine Learning
+# ============================================================
+
+# Datasets descargados.
+# No subimos los conjuntos completos de imágenes.
+data/
+
+# Modelos entrenados.
+# Los conservamos localmente hasta definir
+# cómo distribuirlos y versionarlos.
+models/*.joblib
+
+# Imágenes utilizadas para pruebas locales.
+# Conservamos fuera de GitHub las imágenes originales
+# mientras revisamos sus condiciones de redistribución.
+samples/*.png
+samples/*.jpg
+samples/*.jpeg
+
+# IMPORTANTE:
+# No ignoramos samples/labels.csv.
+# Es un archivo pequeño de metadatos que podemos
+# versionar junto al código.

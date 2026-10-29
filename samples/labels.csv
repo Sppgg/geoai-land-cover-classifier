@@ -1,0 +1,7 @@
+filename,true_label
+test_image.png,AnnualCrop
+test_image_1.png,Residential
+test_image_2.jpg,Residential
+test_image_2.png,SeaLake
+test_image_3.png,HerbaceousVegetation
+test_image_4.png,Forest
